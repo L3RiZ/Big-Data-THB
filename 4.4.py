@@ -52,3 +52,40 @@ def ganzeZahlen(nums):
 print(ganzeZahlen([1, 2, 4, 6, 7, 10, 14, 15, 16, 17, 18]))
 
 #Aufgabe f
+
+def Palindrom(word):
+    i = len(word)
+    backwards = ''
+    
+    while i > 0:
+        backwards += word[i-1]
+        i -= 1
+    
+    if backwards.lower() == word.lower():
+        return True
+    else:
+        return False
+    
+print(Palindrom('Emily'))
+
+#Aufgabe g
+
+def Dreieck(n):
+    nZeile = ''
+    k = n
+    while k >= 0:
+        nZeile += str((math.factorial(n) / (math.factorial(k) * math.factorial(n - k)))) + " "
+        k -= 1
+    return nZeile
+        
+print(Dreieck(7))
+        
+
+#Aufgabe h
+
+def Wörter(words):
+    sortedList = sorted(words.split('-'))
+        
+    return '-'.join(sortedList)
+    
+print(Wörter('beta-alpha-delta-gamma-epsilon'))
