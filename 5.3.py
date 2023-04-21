@@ -17,17 +17,19 @@ class RomNumber:
     
     def print_number(number):
         final_int = 0
+        j = 0
+        last_num = number[-1]
 
-        for j in range(len(number)):
+        while j < len(number):
+            print(final_int)
             if RomNumber.numbers[RomNumber.roman.index(number[j])] < RomNumber.numbers[RomNumber.roman.index(number[j+1])]:          
                 final_int += RomNumber.numbers[RomNumber.roman.index(number[j] + number[j+1])]  
-                j += 1            
-                print(final_int) 
+                j += 2            
             else:
                 final_int += RomNumber.numbers[RomNumber.roman.index(number[j])] 
-                print(final_int) 
+                j += 1
 
         return final_int
                 
-
-print(RomNumber.print_number("MCMXCIX"))
+print(RomNumber.print_roman(45))
+print(RomNumber.print_number("XLV"))
