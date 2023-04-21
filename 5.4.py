@@ -1,7 +1,7 @@
 class Employee:
     #class variable
     additional_salary = 0
-
+    
     def __init__(self, name, id, salary, department):
         self.name = name
         self.id = id
