@@ -22,10 +22,7 @@ class RomNumber:
         j = 0
 
         while j < len(number):
-            if j == len(number)-1:
-                final_int += RomNumber.numbers[RomNumber.roman.index(number[j])]
-                j += 1
-            elif RomNumber.numbers[RomNumber.roman.index(number[j])] < RomNumber.numbers[RomNumber.roman.index(number[j+1])]:          
+            if j != len(number)-1 and RomNumber.numbers[RomNumber.roman.index(number[j])] < RomNumber.numbers[RomNumber.roman.index(number[j+1])]:          
                 final_int += RomNumber.numbers[RomNumber.roman.index(number[j] + number[j+1])]  
                 j += 2            
             else:
