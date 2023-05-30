@@ -30,4 +30,11 @@ plt.savefig('lego1.pdf')
 df_sets_themes[df_sets_themes['name_y'].str.contains("Star Wars")]['year'].value_counts().sort_index().plot(kind='bar', figsize=(10, 5), ylim=(0,100))
 plt.savefig('lego2.pdf')
 
-print(df_with_colors)
+# Get Quantity of Colors for all StarWars Sets
+
+starwars_colors_quantity = df_with_colors[df_with_colors['name_y'].str.contains("Star Wars")].groupby('rgb')['quantity'].sum()
+
+print(starwars_colors_quantity)
+
+
+#DRY? 
